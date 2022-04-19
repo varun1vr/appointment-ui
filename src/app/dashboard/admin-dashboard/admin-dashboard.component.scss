@@ -1,0 +1,20 @@
+.example-header-image {
+    background-image: url("../../../assets/company.png");
+    background-size: cover;
+  }
+
+  .example-card {
+    margin: 10px;
+   }
+  .example-card:hover{
+       box-shadow: 2px;
+       border: 1px solid #efefef;
+       cursor: pointer;
+   }
+   .queryBlock {
+       border: 2px solid gray;
+       margin: 5px;
+       width: 50%;
+       border-radius: 5px;
+       padding: 10px;
+   }

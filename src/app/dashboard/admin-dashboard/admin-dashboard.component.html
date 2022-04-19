@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <mat-card (click)="gotoEstablishment()" class="example-card">
+        <!-- <mat-card-header>
+          <mat-card-title>View my Appointments</mat-card-title>
+        </mat-card-header> -->
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Establishment</mat-card-title>
+          <mat-card-subtitle>Add/Update Establishment</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          Click here to add/update/view establishment
+        </mat-card-content>
+      </mat-card>
+      <!-- <mat-card (click)="createQuery()"class="example-card">
+                <mat-card-header>
+                    <mat-card-title>Create a Query</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    Click here to create a new Query.
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="example-card" (click)="viewQueries()">
+                <mat-card-header>
+                    <mat-card-title>Help?</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    View my previous queries
+                    <div *ngIf="queryAvaiable">
+                        <ng-container *ngFor="let query of queries">
+                            <div class="queryBlock" (click)="goToQuery(query.id)">
+                                {{query.name}}
+                            </div>
+                        </ng-container>
+                    </div>
+                </mat-card-content>
+            </mat-card> -->
+    </div>
+
+  </div>
+
+</div>

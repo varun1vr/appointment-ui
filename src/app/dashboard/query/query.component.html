@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chatBox">
+                <ng-container *ngFor="let message of messages">
+                <div *ngIf="message && message.createdByUser" class="chat-container">
+                    <p>{{message.text?message.text:''}}</p>
+                    <span class="time-right">11:00</span>
+                  </div>
+                  
+                  <div  *ngIf="message && !message.createdByUser" class="chat-container darker">
+                    <p>{{message.text?message.text:''}}</p>
+                    <span class="time-left">11:01</span>
+                  </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="questionBox">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" #myInput (keydown.enter)="createQuestion(myInput.value)"
+            [(ngModel)]="question" placeholder="enter your question">
+        <div class="input-group-append">
+            <button class="btn btn-success" (click)="createQuestion(myInput.value)" type="submit">Go</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<app-vr-table [sourceData]="establishMentData" [displayedColumns]="headers" [listClass]="'Establishment'"
+  (onaddEvent)="addEstablishment(content)">
+</app-vr-table>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Add Establishment</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="establishmentForm" (submit)="onSubmit()">
+        <div class="modal-body">
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> EstablishmentName
+            </mat-label>
+            <input matInput formControlName="establishmentName" type="text">
+            <mat-error
+              *ngIf="establishmentForm.controls.establishmentName.touched && establishmentForm.controls.establishmentName.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.establishmentName.errors">This field is mandatory.</span> -->
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Address
+            </mat-label>
+            <input matInput formControlName="address" required>
+            <mat-error *ngIf="establishmentForm.controls.address.touched && establishmentForm.controls.address.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.address.errors.required">This field is mandatory.</span> -->
+              <!-- <span *ngIf="establishmentForm.controls.address.errors.pattern">This field is invalid.</span> -->
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Type
+            </mat-label>
+            <input matInput formControlName="type" required>
+            <mat-error *ngIf="establishmentForm.controls.type.touched && establishmentForm.controls.type.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.address.errors.required">This field is mandatory.</span> -->
+              <!-- <span *ngIf="establishmentForm.controls.address.errors.pattern">This field is invalid.</span> -->
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> OpeningTime
+            </mat-label>
+            <input matInput formControlName="openingTime" type="text">
+            <mat-error
+              *ngIf="establishmentForm.controls.openingTime.touched && establishmentForm.controls.openingTime.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.userName.errors">This field is mandatory.</span> -->
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Closing Time
+            </mat-label>
+            <input matInput formControlName="closingTime" type="text">
+            <mat-error
+              *ngIf="establishmentForm.controls.closingTime.touched && establishmentForm.controls.closingTime.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.userName.errors">This field is mandatory.</span> -->
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Info
+            </mat-label>
+            <input matInput formControlName="info" type="text">
+            <mat-error *ngIf="establishmentForm.controls.info.touched && establishmentForm.controls.info.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.userName.errors">This field is mandatory.</span> -->
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Pincode
+            </mat-label>
+            <input matInput formControlName="pincode" type="text">
+            <mat-error *ngIf="establishmentForm.controls.pincode.touched && establishmentForm.controls.pincode.invalid">
+              <!-- <span *ngIf="establishmentForm.controls.userName.errors">This field is mandatory.</span> -->
+            </mat-error>
+          </mat-form-field>
+
+          <br>
+
+
+        </div>
+        <div class="modal-footer">
+          <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Create</button>
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
